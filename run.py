@@ -9,9 +9,9 @@ r = redis.Redis()
 conf = ConfigParser.ConfigParser()
 conf.read("config.ini")
 
-UUID_DIVIDER = conf.get("global","uuid_divider") if conf.has_option("global", "uuid_divider") else "$#$"
-TUPLE_DIVIDER = conf.get("global","tuple_divider") if conf.has_option("global", "tuple_divider") else "_|_"
-PART_DIVIDER = conf.get("global","part_divider") if conf.has_option("global", "part_divider") else ":::"
+UUID_DIVIDER = conf.get("dividers","uuid_divider") if conf.has_option("dividers", "uuid_divider") else "$#$"
+TUPLE_DIVIDER = conf.get("dividers","tuple_divider") if conf.has_option("dividers", "tuple_divider") else "_|_"
+PART_DIVIDER = conf.get("dividers","part_divider") if conf.has_option("dividers", "part_divider") else ":::"
 
 @route('/')
 def index():
